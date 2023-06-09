@@ -29,18 +29,17 @@ itemContainer.appendChild(item);
 function loadCurrency(){
 showLoader();
  const cacheData = localStorage.getItem('currencyData');
-//  if(cacheData){
-//     const data = JSON.parse(cacheData);
-//     hideLoader();
-//     displayItems();
-//  }
- fetch('https://students.netoservices.ru/nestjs-backend/slow-get-courses'
- )
- .then(Response => Response.json())
+   if(cacheData){
+     const data = JSON.parse(cacheData);
+     hideLoader();
+     displayItems(data);
+   }
+ fetch('https://students.netoservices.ru/nestjs-backend/slow-get-courses')
+ .then(response => response.JSON())
  .then(data => {
-    localStorage.setItem('currencyData', JSON.stringify(data.Response));
+    localStorage.setItem('currencyData', JSON.stringify(data.response.Valute));
     hideLoader();
-    displayItems(data.Response.Valute);
+    displayItems(data.response.Valute);
  })
  .catch(error => console.error(error));
 }
