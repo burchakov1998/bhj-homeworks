@@ -14,13 +14,13 @@ itemContainer.innerHTML = '';
 
 for (const currencyCode in data) {
     if(data.hasOwnProperty(currencyCode)){
-        const currency = data[currencyCode];
+        const currency = data(currencyCode);
         const item = document.createElement('div');
 item.className = 'item';
 item.innerHTML = `
-<div class ='item__code'>${currency.CharCode}</div>
-<div class ='item__value'>${currency.Value}</div>
-<div class ='item__currency'>руб.</div>`
+<div class="item__code">${currency.CharCode} </div>
+<div class="item__value">${currency.Value}</div>
+<div class="item__currency">руб.</div>`
 itemContainer.appendChild(item);
     }
 }
@@ -28,7 +28,7 @@ itemContainer.appendChild(item);
 
 function loadCurrency(){
 showLoader();
- //const cacheData = localStorage.getItem('currencyData');
+ const cacheData = localStorage.getItem('currencyData');
 //  if(cacheData){
 //     const data = JSON.parse(cacheData);
 //     hideLoader();
