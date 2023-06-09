@@ -22,7 +22,7 @@ for (const{answers, votes} of stat){
 }
 
 async() => {
-    const response = await fetch('htpps://students.netoservices.ru/nestjs-backend/poll');
+    const response = await fetch('https://students.netoservices.ru/nestjs-backend/poll');
     const body = await response.json();
     pollTitle.textContent = body.data.title;
     body.data.answers.array.forEach((item,index) => {
