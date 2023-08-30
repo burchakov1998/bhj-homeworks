@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../bjs-2-homeworks"
+		},
+		{
+			"name": "bhj-homeworks",
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"githubPullRequests.ignoredPullRequestBranches": [
+			"bjs-53"
+		]
+	}
+}
